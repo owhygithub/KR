@@ -234,29 +234,29 @@ class JW:
 
     def solve(self):
         """
-        Runs the JW algorithm with added debugging to verify complete solutions.
+        Runs the JW algorithm and returns the result, assignments, and statistics.
         """
         print("\nStarting JW solver...")
         start_time = time.time()
 
         try:
             result, assignments = self.__solve__({})
-            end_time = time.time()
-            elapsed_time = end_time - start_time
+            elapsed_time = time.time() - start_time
 
-            print("\nSolver finished!")
+            print("\tSolver finished!")
             print(f"Status: {'SATISFIABLE' if result else 'UNSATISFIABLE'}")
             print(f"Time taken: {elapsed_time:.2f} seconds")
             print(f"Evaluations: {self.num_evaluations}")
             print(f"Backtracks: {self.num_backtracking}")
 
+            # Check for unassigned variables
             if result:
                 unassigned_vars = get_unassigned_variables(assignments, self.clauses)
                 if unassigned_vars:
                     print(f"Error: Unassigned variables remain: {unassigned_vars}")
-                    return False, {}
+                    result = False  # Mark as unsatisfiable
 
-            return result, assignments
+            return result, assignments, self.num_evaluations, self.num_backtracking
 
         except KeyboardInterrupt:
             elapsed_time = time.time() - start_time
@@ -264,4 +264,4 @@ class JW:
             print(f"Time elapsed: {elapsed_time:.2f} seconds")
             print(f"Evaluations: {self.num_evaluations}")
             print(f"Backtracks: {self.num_backtracking}")
-            return False, {}
+            return False, {}, self.num_evaluations, self.num_backtracking

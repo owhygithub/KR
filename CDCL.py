@@ -202,14 +202,14 @@ class CDCL:
             end_time = time.time()
             elapsed_time = end_time - start_time
 
-            print("\nSolver finished!")
+            print("\tSolver finished!")
             print(f"Status: {'SATISFIABLE' if result else 'UNSATISFIABLE'}")
             print(f"Time taken: {elapsed_time:.2f} seconds")
             print(f"Number of evaluations: {self.num_evaluations}")
             print(f"Number of backtracks: {self.num_backtracking}")
 
 
-            return result, assignments
+            return result, assignments, self.num_evaluations, self.num_backtracking
 
         except KeyboardInterrupt:
             print("\nSolver interrupted by user")
@@ -217,4 +217,4 @@ class CDCL:
             print(f"Time elapsed: {elapsed_time:.2f} seconds")
             print(f"Evaluations: {self.num_evaluations}")
             print(f"Backtracks: {self.num_backtracking}")
-            return False, {}
+            return False, {}, self.num_evaluations, self.num_backtracking

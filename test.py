@@ -5,7 +5,7 @@ from JW import JW
 
 # Files provided by the user
 cnf_files = [
-    "sudoku1 (1).cnf",
+    "sudoku1.cnf",
     "sudoku2.cnf",
     "sudoku3.cnf",
     "sudoku4.cnf",
