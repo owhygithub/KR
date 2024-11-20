@@ -19,7 +19,36 @@ import json
 
 # Collect all CNF files from the "sudoku_puzzles" directory
 cnf_folder = "sudoku_puzzles"
-cnf_files = [os.path.join(cnf_folder, file) for file in os.listdir(cnf_folder) if file.endswith(".cnf")]
+cnf_files = sorted(
+    [os.path.join(cnf_folder, file) for file in os.listdir(cnf_folder) if file.endswith(".cnf")]
+)
+
+def print_solution(assignment):
+    """
+    Print the Sudoku solution in a readable grid format.
+    """
+    grid = [[0 for _ in range(9)] for _ in range(9)]
+
+    for var, value in assignment.items():
+        if value and 100 <= var <= 999:
+            row = (var // 100) - 1
+            col = ((var // 10) % 10) - 1
+            digit = var % 10
+            grid[row][col] = digit
+
+    print("\nSudoku Solution:")
+    print("  " + "-" * 25)
+    for i, row in enumerate(grid):
+        if i % 3 == 0 and i != 0:
+            print("  " + "-" * 25)
+        row_str = "  |"
+        for j, val in enumerate(row):
+            if j % 3 == 0 and j != 0:
+                row_str += "|"
+            row_str += f" {val}"
+        row_str += " |"
+        print(row_str)
+    print("  " + "-" * 25)
 
 def save_results_to_file(results, file_path):
     with open(file_path, "w") as f:
@@ -27,7 +56,7 @@ def save_results_to_file(results, file_path):
     print(f"Results saved to {file_path}")
 
 # Code to run the experiment for a given solver
-def run_solver_experiment(solver_class, cnf_files, solver_name, num_runs=3, save_path="all_results.json"):
+def run_solver_experiment(solver_class, cnf_files, solver_name, num_runs=1, save_path="all_results.json"):
     results = defaultdict(lambda: defaultdict(list))
     
     for file_path in cnf_files:
@@ -48,11 +77,14 @@ def run_solver_experiment(solver_class, cnf_files, solver_name, num_runs=3, save
                 
                 # Solve the problem
                 result, assignments, evals, backtracks = solver.solve()
+
+                print_solution(assignments)
                 
                 # Time taken
                 time_taken = time.time() - start_time
                 
                 # Store statistics
+                results[file_path]["solver"].append(solver_name)
                 results[file_path]["evaluations"].append(evals)
                 results[file_path]["backtracks"].append(backtracks)
                 results[file_path]["time_taken"].append(time_taken)

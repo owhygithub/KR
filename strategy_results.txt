@@ -1,0 +1,111 @@
+Results for Solver: CDCL
+  sudoku_puzzles/random-sudoku-less.cnf:
+    Avg Evaluations: 1.0
+    Max Evaluations: 1
+    Min Evaluations: 1
+    Avg Backtracks: 0.0
+    Max Backtracks: 0
+    Min Backtracks: 0
+    Avg Time Taken: 0.3473076820373535 sec
+    Max Time Taken: 0.3473076820373535 sec
+    Min Time Taken: 0.3473076820373535 sec
+    Satisfiable Percentage: 100.00%
+
+  sudoku_puzzles/random-sudoku-more.cnf:
+    Avg Evaluations: 1.0
+    Max Evaluations: 1
+    Min Evaluations: 1
+    Avg Backtracks: 0.0
+    Max Backtracks: 0
+    Min Backtracks: 0
+    Avg Time Taken: 0.30072689056396484 sec
+    Max Time Taken: 0.30072689056396484 sec
+    Min Time Taken: 0.30072689056396484 sec
+    Satisfiable Percentage: 100.00%
+
+  sudoku_puzzles/random-sudoku-most.cnf:
+    Avg Evaluations: 15.0
+    Max Evaluations: 15
+    Min Evaluations: 15
+    Avg Backtracks: 1.0
+    Max Backtracks: 1
+    Min Backtracks: 1
+    Avg Time Taken: 0.3328409194946289 sec
+    Max Time Taken: 0.3328409194946289 sec
+    Min Time Taken: 0.3328409194946289 sec
+    Satisfiable Percentage: 100.00%
+
+Results for Solver: DPLL
+  sudoku_puzzles/random-sudoku-less.cnf:
+    Avg Evaluations: 1.0
+    Max Evaluations: 1
+    Min Evaluations: 1
+    Avg Backtracks: 0.0
+    Max Backtracks: 0
+    Min Backtracks: 0
+    Avg Time Taken: 0.2738959789276123 sec
+    Max Time Taken: 0.2738959789276123 sec
+    Min Time Taken: 0.2738959789276123 sec
+    Satisfiable Percentage: 100.00%
+
+  sudoku_puzzles/random-sudoku-more.cnf:
+    Avg Evaluations: 1.0
+    Max Evaluations: 1
+    Min Evaluations: 1
+    Avg Backtracks: 0.0
+    Max Backtracks: 0
+    Min Backtracks: 0
+    Avg Time Taken: 0.2939291000366211 sec
+    Max Time Taken: 0.2939291000366211 sec
+    Min Time Taken: 0.2939291000366211 sec
+    Satisfiable Percentage: 100.00%
+
+  sudoku_puzzles/random-sudoku-most.cnf:
+    Avg Evaluations: 15.0
+    Max Evaluations: 15
+    Min Evaluations: 15
+    Avg Backtracks: 2.0
+    Max Backtracks: 2
+    Min Backtracks: 2
+    Avg Time Taken: 0.33161091804504395 sec
+    Max Time Taken: 0.33161091804504395 sec
+    Min Time Taken: 0.33161091804504395 sec
+    Satisfiable Percentage: 100.00%
+
+Results for Solver: JW
+  sudoku_puzzles/random-sudoku-less.cnf:
+    Avg Evaluations: 1.0
+    Max Evaluations: 1
+    Min Evaluations: 1
+    Avg Backtracks: 0.0
+    Max Backtracks: 0
+    Min Backtracks: 0
+    Avg Time Taken: 0.2749488353729248 sec
+    Max Time Taken: 0.2749488353729248 sec
+    Min Time Taken: 0.2749488353729248 sec
+    Satisfiable Percentage: 100.00%
+
+  sudoku_puzzles/random-sudoku-more.cnf:
+    Avg Evaluations: 1.0
+    Max Evaluations: 1
+    Min Evaluations: 1
+    Avg Backtracks: 0.0
+    Max Backtracks: 0
+    Min Backtracks: 0
+    Avg Time Taken: 0.28919315338134766 sec
+    Max Time Taken: 0.28919315338134766 sec
+    Min Time Taken: 0.28919315338134766 sec
+    Satisfiable Percentage: 100.00%
+
+  sudoku_puzzles/random-sudoku-most.cnf:
+    Avg Evaluations: 6.0
+    Max Evaluations: 6
+    Min Evaluations: 6
+    Avg Backtracks: 0.0
+    Max Backtracks: 0
+    Min Backtracks: 0
+    Avg Time Taken: 0.32004523277282715 sec
+    Max Time Taken: 0.32004523277282715 sec
+    Min Time Taken: 0.32004523277282715 sec
+    Satisfiable Percentage: 100.00%
+

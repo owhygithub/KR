@@ -1,9 +1,12 @@
-def generate_sudoku_clauses(grid_size):
+import random
+
+def generate_sudoku_clauses(grid_size, num_clues=17):
     clauses = []
 
     def var(i, j, k):
         return grid_size * grid_size * (i - 1) + grid_size * (j - 1) + k
 
+    # Standard Sudoku constraints (cell, row, column, sub-grid)
     for i in range(1, grid_size + 1):
         for j in range(1, grid_size + 1):
             clauses.append([var(i, j, k) for k in range(1, grid_size + 1)])
@@ -28,4 +31,14 @@ def generate_sudoku_clauses(grid_size):
                 for i in range(len(cells)):
                     for j in range(i + 1, len(cells)):
                         clauses.append([-cells[i], -cells[j]])
+
+    # Add predefined clues for solvable puzzles
+    predefined_clauses = []
+    while len(predefined_clauses) < num_clues:
+        i = random.randint(1, grid_size)
+        j = random.randint(1, grid_size)
+        k = random.randint(1, grid_size)
+        predefined_clauses.append([var(i, j, k)])
+    clauses += predefined_clauses
+
     return clauses

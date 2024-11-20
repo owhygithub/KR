@@ -1,0 +1,53 @@
+{
+    "sudoku_puzzles/random-sudoku-less.cnf": {
+        "solver": [
+            "JW"
+        ],
+        "evaluations": [
+            1
+        ],
+        "backtracks": [
+            0
+        ],
+        "time_taken": [
+            0.2749488353729248
+        ],
+        "status": [
+            "SATISFIABLE"
+        ]
+    },
+    "sudoku_puzzles/random-sudoku-more.cnf": {
+        "solver": [
+            "JW"
+        ],
+        "evaluations": [
+            1
+        ],
+        "backtracks": [
+            0
+        ],
+        "time_taken": [
+            0.28919315338134766
+        ],
+        "status": [
+            "SATISFIABLE"
+        ]
+    },
+    "sudoku_puzzles/random-sudoku-most.cnf": {
+        "solver": [
+            "JW"
+        ],
+        "evaluations": [
+            6
+        ],
+        "backtracks": [
+            0
+        ],
+        "time_taken": [
+            0.32004523277282715
+        ],
+        "status": [
+            "SATISFIABLE"
+        ]
+    }
+}
